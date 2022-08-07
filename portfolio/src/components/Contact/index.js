@@ -8,7 +8,7 @@ const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const refForm = useRef()
     useEffect(() => {
-        return setTimeout(() => {
+        setTimeout(() => {
             setLetterClass('text-animate-hover')
         }, 3000)
     }, []) 
@@ -20,7 +20,7 @@ const Contact = () => {
             .sendForm(
                 'service_07mfffs',
                 'template_da3nkth',
-                refForm.curremt,
+                refForm.current,
                 'Lqeie9VyCces4aNRI'
 
             )
@@ -37,8 +37,8 @@ const Contact = () => {
 
     return (
         <>
-            <div className='container contact-page'>
-                <div className='text-zone'>
+            <div className="container contact-page">
+                <div className="text-zone">
                     <h1>
                         <AnimatedLetters
                         letterClass={letterClass}
@@ -53,10 +53,10 @@ const Contact = () => {
                         <form ref={refForm} onSubmit={sendEmail}>
                             <ul>
                                 <li className="half">
-                                    <input type="text" name="name" placeholder='Name' required />
+                                    <input type="text" name="name" placeholder="Name" required />
                                 </li>
                                 <li className="half">
-                                    <input type="email" name="email" placeholder='Email' required />
+                                    <input type="email" name="email" placeholder="Email" required />
                                 </li>
                                 <li>
                                     <input placeholder="Subject" type="text" name="subject" required />
@@ -65,7 +65,7 @@ const Contact = () => {
                                     <textarea placeholder="Message" name="message" required></textarea>
                                 </li>
                                 <li>
-                                    <input type="submit" className="flat-bottom" value="SEND" />
+                                    <input type="submit" className="flat-button" value="SEND" />
                                 </li>
                             </ul>
                         </form>

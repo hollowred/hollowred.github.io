@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import './index.scss';
-import LogoS from '../../../assests/images/logo-s.png'
+import LogoS from '../../../assets/images/logo-s.png'
 import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin'
 import gsap from 'gsap-trial'
 
@@ -29,7 +29,7 @@ const Logo =() => {
                 opacity: 0,
             },
             {
-                opscity: 1,
+                opacity: 1,
                 delay: 4,
                 duration: 4,
             }
