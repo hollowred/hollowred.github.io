@@ -3,9 +3,12 @@ import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss"
 import portfolioDate from '../../data/portfolio.json'
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const Portfolio = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
+    const [portfolio, setPortfolio] = useState([])
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -16,6 +19,15 @@ const Portfolio = () => {
             clearTimeout(timer)
         }
     });
+
+    useEffect(() => {
+        getPortfolio()
+    }, [])
+
+    const getPortfolio = async () => {
+        const querySnapshot = await getDocs(collection( db, "portfolio"))
+        setPortolio(querySnapshot.docs.map((doc) => doc.data()));
+    }
 
     const renderPortfolio = (portfolio) => {
         return (
