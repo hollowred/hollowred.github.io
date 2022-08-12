@@ -1,10 +1,11 @@
+import { signInWithGoogle } from "../../firebase"
+
 const Login = () => {
     return (
         <div className="dashboard">
-            <button>
+            <button onClick={signInWithGoogle}>
                 Sign in with google
             </button>   
-
         </div>
     )
 }
