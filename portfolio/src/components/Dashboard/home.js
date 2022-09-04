@@ -12,7 +12,7 @@ const Home = () => {
         const name = form.current[0]?.value;
         const description = form.current[1]?.value;
         const url = form.current[2]?.value;
-        const iamge = form.current[3]?.files[0];
+        const image = form.current[3]?.files[0];
 
         const storageRef = ref(storage, `portfolio/${image.name}`)
 
@@ -45,7 +45,7 @@ const Home = () => {
         )    
     }
 
-    const savePortfolio = (portfolio) => {
+    const savePortfolio = async (portfolio) => {
         try {
             await addDoc(collection(db, 'portfolio'), portfolio)
             window.location.reload(false)

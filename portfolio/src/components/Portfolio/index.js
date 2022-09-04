@@ -25,7 +25,7 @@ const Portfolio = () => {
 
     const getPortfolio = async () => {
         const querySnapshot = await getDocs(collection( db, "portfolio"))
-        setPortolio(querySnapshot.docs.map((doc) => doc.data()));
+        setPortfolio(querySnapshot.docs.map((doc) => doc.data()));
     }
 
     const renderPortfolio = (portfolio) => {
