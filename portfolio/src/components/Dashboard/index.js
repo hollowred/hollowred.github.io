@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { auth } from "../../firebase";
 import Home from "./home";
 import Login from "../Login";
 
